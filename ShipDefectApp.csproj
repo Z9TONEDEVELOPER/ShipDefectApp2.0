@@ -63,5 +63,23 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
 	</ItemGroup>
+	<Target Name="CleanAppBundleAttributes" AfterTargets="CreateAppBundle" BeforeTargets="_CodesignAppBundle">
+		<Message Text="Starting cleaning extended attributes in app bundle: $(AppBundleDir)" Importance="high" />
+		<!-- Логирование ошибок, но сборка не падает -->
+		<Exec Command="xattr -cr &quot;$(AppBundleDir)&quot;" IgnoreExitCode="true">
+		<Output TaskParameter="ExitCode" PropertyName="AppBundleXattrExitCode" />
+		</Exec>
+		<Message Text="Finished cleaning extended attributes in app bundle. Exit code: $(AppBundleXattrExitCode)" Importance="high" />
+	</Target>
+
+	<Target Name="CleanExtendedAttributes" BeforeTargets="Build">
+		<Message Text="Starting cleaning extended attributes in project files..." Importance="high" />
+		<!-- Очистка только нужных файлов и игнорирование ошибок, если файлов нет -->
+		<Exec Command="find &quot;$(ProjectDir)&quot; -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.icns' -o -name '*.svg' \) -exec xattr -c {} \;" IgnoreExitCode="true">
+			<Output TaskParameter="ExitCode" PropertyName="ProjectFilesXattrExitCode" />
+		</Exec>
+		<Message Text="Finished cleaning extended attributes in project files. Exit code: $(ProjectFilesXattrExitCode)" Importance="high" />
+	</Target>
+
 
 </Project>
