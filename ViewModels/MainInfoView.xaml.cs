@@ -1,6 +1,6 @@
 namespace MauiApp1;
 
-public partial class MainInfoView : ContentPage
+public partial class MainInfoView : ContentView
 {
 	public MainInfoView()
 	{

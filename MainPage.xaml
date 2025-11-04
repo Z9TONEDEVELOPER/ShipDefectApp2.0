@@ -20,7 +20,7 @@
 
             <toolkit:Expander>
                 <toolkit:Expander.Header>
-                    <Label Text="Формы по судну" FontAttributes="Bold"/>
+                    <Button Text="Основная информация" Clicked="OpenMainInfo_Clicked"/>
                 </toolkit:Expander.Header>
                 <VerticalStackLayout Padding="10" Spacing="5">
                     <Button Text="Таблица 3.5.3"
@@ -45,10 +45,10 @@
     </ScrollView>
 
         <!-- Правая область -->
-        <Label Text="Form"
-               BackgroundColor="LightYellow"
-               Grid.Row="1"
-               Grid.Column="1"/>
+        <ContentView x:Name="RightContent"
+             Grid.Row="1"
+             Grid.Column="1"
+             BackgroundColor="Gray"/>    
         <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2"
                        BackgroundColor="#E5E5E5"
                        Padding="10"
