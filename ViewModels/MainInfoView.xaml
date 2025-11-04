@@ -3,10 +3,183 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainInfoView"
              Title="MainInfoView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Основные сведения о судне"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+
+            <Grid ColumnDefinitions="150,*,*,*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <Label Grid.Row="0" Text="Название судна:" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" Placeholder="Введите название"/>
+
+                <Label Grid.Row="1" Text="Регистровый номер:" VerticalOptions="Center"/>
+                <Entry Grid.Row="1" Grid.Column="1"/>
+
+                <Label Grid.Row="2" Text="Порт приписки:" VerticalOptions="Center"/>
+                <Entry Grid.Row="2" Grid.Column="1"/>
+
+                <Label Grid.Row="3" Text="Валовая вместимость:" VerticalOptions="Center"/>
+                <Entry Grid.Row="3" Grid.Column="1"/>
+
+                <Label Grid.Row="4" Text="Водоизмещение:" VerticalOptions="Center"/>
+                <Entry Grid.Row="4" Grid.Column="1"/>
+
+                <Label Grid.Row="5" Text="Дата постройки:" VerticalOptions="Center"/>
+                <Entry Grid.Row="5" Grid.Column="1" Placeholder="дд.мм.гг"/>
+
+                <Label Grid.Row="6" Text="Класс судна:" VerticalOptions="Center"/>
+                <Picker Grid.Row="6" Grid.Column="1" x:Name="ShipClassPicker">
+                    <Picker.Items>
+                        <x:String>None</x:String>
+                        <x:String>Р</x:String>
+                        <x:String>О-ПР</x:String>
+                        <x:String>О</x:String>
+                        <x:String>М-СП</x:String>
+                        <x:String>М-ПР</x:String>
+                        <x:String>М</x:String>
+                        <x:String>Л</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Entry Grid.Row="6" Grid.Column="2" />
+
+                <HorizontalStackLayout Grid.Row="6" Grid.Column="3" Spacing="4" VerticalOptions="Center">
+                    <Label Text="Ледовый пояс:" FontSize="14" VerticalOptions="Center" />
+                    <CheckBox x:Name="ship_ice_belt" CheckedChanged="ShipIceBelt_CheckedChanged" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <Picker Grid.Row="6" Grid.Column="4" x:Name="ShipIceBeltMMPicker">
+                    <Picker.Items>
+                        <x:String>None</x:String>
+                        <x:String>5 мм</x:String>
+                        <x:String>10 мм</x:String>
+                        <x:String>20 мм</x:String>
+                        <x:String>30 мм</x:String>
+                        <x:String>40 мм</x:String>
+                        <x:String>50 мм</x:String>
+                        <x:String>60 мм</x:String>
+                        <x:String>70 мм</x:String>
+                        <x:String>80 мм</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="7" Text="Назначение судна:" VerticalOptions="Center"/>
+                <Picker Grid.Row="7" Grid.Column="1" x:Name="ShipTypePicker">
+                    <Picker.Items>
+                        <x:String>None</x:String>
+                        <x:String>Сухогрузное судно</x:String>
+                        <x:String>Нефтеналивное судно</x:String>
+                        <x:String>Пассажирское судно</x:String>
+                        <x:String>Разъездное судно</x:String>
+                        <x:String>Рыболовное судно</x:String>
+                        <x:String>Баржа</x:String>
+                        <x:String>Шаланда</x:String>
+                        <x:String>Понтон</x:String>
+                        <x:String>Буксир</x:String>
+                        <x:String>Судно на подводных крыльях</x:String>
+                        <x:String>Судно на воздушной подушке</x:String>
+                        <x:String>Буксир-толкач</x:String>
+                        <x:String>Ледокол</x:String>
+                        <x:String>Плавкран</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="8" Text="Назначение судна:" VerticalOptions="Center"/>
+                <Entry Grid.Row="8" Grid.Column="1"/>
+                <Label Grid.Row="9" Text="Материал корпуса:" VerticalOptions="Center"/>
+                <Picker Grid.Row="9" Grid.Column="1" x:Name="ShipMaterialPicker">
+                    <Picker.Items>
+                        <x:String>None</x:String>
+                        <x:String>Металлический сплав корпуса</x:String>
+                        <x:String>Дюралюминевый сплав корпуса</x:String>
+                        <x:String>Алюминиево-магниевый сплав корпуса</x:String>
+                        <x:String>Пластмассовый корпус</x:String>
+                        <x:String>Деревянный корпус</x:String>
+                        <x:String>Железобетонный корпус</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="10" Text="Материал корпуса судна (Предел текучести МПа):" VerticalOptions="Center"/>
+                <Picker Grid.Row="10" Grid.Column="1" x:Name="ShipMaterialMPAPicker">
+                    <Picker.Items>
+                        <x:String>None</x:String>
+                        <x:String>235</x:String>
+                        <x:String>315</x:String>
+                        <x:String>355</x:String>
+                        <x:String>390</x:String>
+                        <x:String>420</x:String>
+                        <x:String>460</x:String>
+                        <x:String>500</x:String>
+                        <x:String>550</x:String>
+                        <x:String>620</x:String>
+                        <x:String>690</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="11" Text="Длина расчетная, м:" VerticalOptions="Center"/>
+                <Entry Grid.Row="11" Grid.Column="1"/>
+
+                <Label Grid.Row="12" Text="Ширина расчетная, м:" VerticalOptions="Center"/>
+                <Entry Grid.Row="12" Grid.Column="1"/>
+
+                <Label Grid.Row="13" Text="Шпация, мм:" VerticalOptions="Center"/>
+                <Entry Grid.Row="13" Grid.Column="1"/>
+
+                <Label Grid.Row="14" Text="Шпация в носовой оконечности мм:" VerticalOptions="Center"/>
+                <Entry Grid.Row="14" Grid.Column="1"/>
+
+                <Label Grid.Row="15" Text="Границы носовой оконечности судна:" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="15" Grid.Column="1"
+                                    Spacing="12"
+                                    VerticalOptions="Center">
+                    <Label Text="нач. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                    <Label Text="кон. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                </HorizontalStackLayout>
+                <Label Grid.Row="16" Text="Границы носового переходного района:" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="16" Grid.Column="1"
+                                    Spacing="12"
+                                    VerticalOptions="Center">
+                    <Label Text="нач. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                    <Label Text="кон. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                </HorizontalStackLayout>
+                <Label Grid.Row="17" Text="Границы средней части судна:" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="17" Grid.Column="1"
+                                    Spacing="12"
+                                    VerticalOptions="Center">
+                    <Label Text="нач. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                    <Label Text="кон. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                </HorizontalStackLayout>
+                <Label Grid.Row="18" Text="Границы кормового переходного района:" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="18" Grid.Column="1"
+                                    Spacing="12"
+                                    VerticalOptions="Center">
+                    <Label Text="нач. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                    <Label Text="кон. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                </HorizontalStackLayout>
+                <Label Grid.Row="19" Text="Границы кормовой оконечности судна:" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="19" Grid.Column="1"
+                                    Spacing="12"
+                                    VerticalOptions="Center">
+                    <Label Text="нач. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                    <Label Text="кон. шп" VerticalOptions="Center" />
+                    <Entry WidthRequest="70"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Button Text="Сохранить данные судна"
+                    BackgroundColor="#2E86DE"
+                    TextColor="White"
+                    Padding="10"
+                    CornerRadius="6"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

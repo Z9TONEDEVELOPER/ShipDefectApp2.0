@@ -1,4 +1,5 @@
-﻿namespace ShipDefectApp;
+﻿using MauiApp1;
+namespace ShipDefectApp;
 
 public partial class MainPage : ContentPage
 {
