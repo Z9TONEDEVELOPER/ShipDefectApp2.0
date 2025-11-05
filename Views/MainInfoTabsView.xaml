@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ShipDefect_App.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.MainInfoTabsView"
+             Title="MainInfoTabsView">
+    <toolkit:TabView>
+
+        <toolkit:TabViewItem Text="Сведения о судне">
+            <viewmodels:MainInfoView />
+        </toolkit:TabViewItem>
+
+        <toolkit:TabViewItem Text="Сведения о ЗОТ">
+            <viewmodels:ZotInfoView />
+        </toolkit:TabViewItem>
+
+        <toolkit:TabViewItem Text="Прочие сведения">
+            <viewmodels:OtherInfoView />
+        </toolkit:TabViewItem>
+
+    </toolkit:TabView>
+</ContentPage>

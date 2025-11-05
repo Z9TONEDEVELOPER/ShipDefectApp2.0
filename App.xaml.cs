@@ -13,7 +13,7 @@ public partial class App : Application
 	{
 		//return new Window(new AppShell());
 		if (DevMode)
-			return new Window(new ShipZOTView());
+			return new Window(new OtherInfoView());
         else
         {
 			return new Window(new AppShell());
