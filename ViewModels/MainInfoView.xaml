@@ -28,7 +28,7 @@
                 <Entry Grid.Row="4" Grid.Column="1"/>
 
                 <Label Grid.Row="5" Text="Дата постройки:" VerticalOptions="Center"/>
-                <Entry Grid.Row="5" Grid.Column="1" Placeholder="дд.мм.гг"/>
+                <DatePicker Grid.Row="5" Grid.Column="1"/>
 
                 <Label Grid.Row="6" Text="Класс судна:" VerticalOptions="Center"/>
                 <Picker Grid.Row="6" Grid.Column="1" x:Name="ShipClassPicker">

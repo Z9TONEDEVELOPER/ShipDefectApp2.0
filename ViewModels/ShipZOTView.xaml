@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ShipZOTView"
+             Title="ShipZOTView">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <!-- Заголовок -->
+            <Label Text="Сведения о ЗОТ"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+
+            <Grid ColumnDefinitions="200,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <Label Grid.Row="0" Text="Место проведения замеров:" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1"/>
+
+                <Label Grid.Row="1" Text="Дата начала замеров:" VerticalOptions="Center"/>
+                <DatePicker Grid.Row="1" Grid.Column="1"/>
+
+                <Label Grid.Row="2" Text="Дата окончания замеров:" VerticalOptions="Center"/>
+                <DatePicker Grid.Row="2" Grid.Column="1"/>
+
+                <Label Grid.Row="3" Text="Вид текущего освидетельствования:" VerticalOptions="Center"/>
+                <Entry Grid.Row="3" Grid.Column="1"/>
+
+                <Label Grid.Row="4" Text="Цель освидетельствования:" VerticalOptions="Center"/>
+                <Entry Grid.Row="4" Grid.Column="1"/>
+
+                <Label Grid.Row="5" Text="Акт дефектации №:" VerticalOptions="Center"/>
+                <Entry Grid.Row="5" Grid.Column="1"/>
+
+            </Grid>
+
+            <Label Text="Сведения об организации выполняющей ЗОТ и операторах"
+                   FontAttributes="Bold"
+                   Margin="0,15,0,5"
+                   HorizontalTextAlignment="Center"/>
+
+            <Grid ColumnDefinitions="200,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <Label Grid.Row="0" Text="Название организации:" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1"/>
+
+                <Label Grid.Row="1" Text="Адрес нахождения компании:" VerticalOptions="Center"/>
+                <Entry Grid.Row="1" Grid.Column="1"/>
+
+                <Label Grid.Row="2" Text="Email:" VerticalOptions="Center"/>
+                <Entry Grid.Row="2" Grid.Column="1"/>
+
+                <Label Grid.Row="3" Text="Контактный телефон:" VerticalOptions="Center"/>
+                <Entry Grid.Row="3" Grid.Column="1"/>
+
+                <Label Grid.Row="4" Text="Свидетельство о признании №:" VerticalOptions="Center"/>
+                <Entry Grid.Row="4" Grid.Column="1"/>
+
+                <Label Grid.Row="5" Text="Свидетельство о признании кем выдано:" VerticalOptions="Center"/>
+                <Entry Grid.Row="5" Grid.Column="1"/>
+
+                <Label Grid.Row="6" Text="Свидетельство о признании действительно:" VerticalOptions="Center"/>
+                <Entry Grid.Row="6" Grid.Column="1"/>
+
+                <Label Grid.Row="7" Text="Квалификация операторов (ФИО, квалификация, № сертификата, срок действия сертификата):" VerticalOptions="Center"/>
+                <Editor Grid.Row="7" Grid.Column="1" HeightRequest="120"/>
+            </Grid>
+
+            <Button Text="Сохранить данные ЗОТ"
+                    BackgroundColor="#2E86DE"
+                    TextColor="White"
+                    CornerRadius="5"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
