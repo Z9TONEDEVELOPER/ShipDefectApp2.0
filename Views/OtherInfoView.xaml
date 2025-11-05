@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="MauiApp1.OtherInfoView"
-             Title="OtherInfoView">
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             x:Class="MauiApp1.OtherInfoView">
+
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="14">
+
             <Label Text="Сведения об оборудовании"
                    FontAttributes="Bold"
                    FontSize="18"/>
 
             <!-- TABVIEW: Приборы -->
-            <toolkit:TabView TabStripPlacement="Top">
+            <syncfusion:SfTabView>
 
-                <toolkit:TabViewItem Text="Прибор 1">
+                <syncfusion:SfTabItem Header="Прибор 1">
                     <VerticalStackLayout Padding="10" Spacing="8">
-                        <!-- сюда позже вставим поля -->
                         <Label Text="Прибор 1 данные"/>
                     </VerticalStackLayout>
-                </toolkit:TabViewItem>
+                </syncfusion:SfTabItem>
 
-                <toolkit:TabViewItem Text="Прибор 2">
+                <syncfusion:SfTabItem Header="Прибор 2">
                     <VerticalStackLayout Padding="10" Spacing="8">
                         <Label Text="Прибор 2 данные"/>
                     </VerticalStackLayout>
-                </toolkit:TabViewItem>
+                </syncfusion:SfTabItem>
 
-                <toolkit:TabViewItem Text="Прибор 3">
+                <syncfusion:SfTabItem Header="Прибор 3">
                     <VerticalStackLayout Padding="10" Spacing="8">
                         <Label Text="Прибор 3 данные"/>
                     </VerticalStackLayout>
-                </toolkit:TabViewItem>
+                </syncfusion:SfTabItem>
 
-            </toolkit:TabView>
+            </syncfusion:SfTabView>
+
 
             <Label Text="Комиссия"
                    FontAttributes="Bold"
                    FontSize="18"
                    Margin="0,10,0,0"/>
 
-            <!-- Комиссия таблица (позже заменим на DataGrid) -->
+            <!-- Комиссия -->
             <CollectionView HeightRequest="200" x:Name="CommissionList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="*,*,*,*">
-                            <Label Text="{Binding Position}" />
+                            <Label Text="{Binding Position}"/>
                             <Label Text="{Binding Name}" Grid.Column="1"/>
                             <Button Text="подпись" Grid.Column="2"/>
                             <Button Text="печать" Grid.Column="3"/>
@@ -64,8 +65,10 @@
                 <Label Text="филиала Речного Регистра"/>
             </HorizontalStackLayout>
 
-            <Button Text="Сохранить" BackgroundColor="#2E86DE" TextColor="White"/>
+            <Button Text="Сохранить"
+                    BackgroundColor="#2E86DE"
+                    TextColor="White"/>
 
         </VerticalStackLayout>
     </ScrollView>
-</ContentPage>
+</ContentView>

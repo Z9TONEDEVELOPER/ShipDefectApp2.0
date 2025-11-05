@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:views="clr-namespace:ShipDefect_App.Views"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="MauiApp1.Views.MainInfoTabsView"
-             Title="MainInfoTabsView">
-    <toolkit:TabView>
+             xmlns:Views="clr-namespace:MauiApp1"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             x:Class="MauiApp1.MainInfoTabsView">
 
-        <toolkit:TabViewItem Text="Сведения о судне">
-            <views:MainInfoView />
-        </toolkit:TabViewItem>
+    <syncfusion:SfTabView>
 
-        <toolkit:TabViewItem Text="Сведения о ЗОТ">
-            <views:ZotInfoView />
-        </toolkit:TabViewItem>
+        <syncfusion:SfTabItem Header="Сведения о судне">
+            <Views:MainInfoView />
+        </syncfusion:SfTabItem>
 
-        <toolkit:TabViewItem Text="Прочие сведения">
-            <views:OtherInfoView />
-        </toolkit:TabViewItem>
+        <syncfusion:SfTabItem Header="Сведения о ЗОТ">
+            <Views:ShipZOTView />
+        </syncfusion:SfTabItem>
 
-    </toolkit:TabView>
+        <syncfusion:SfTabItem Header="Прочие сведения">
+            <Views:OtherInfoView/>
+        </syncfusion:SfTabItem>
+
+    </syncfusion:SfTabView>
 </ContentPage>
