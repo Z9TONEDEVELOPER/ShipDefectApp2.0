@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
              x:Class="MauiApp1.OtherInfoView">
 
     <ScrollView>
@@ -11,121 +10,76 @@
                    FontAttributes="Bold"
                    FontSize="18"/>
 
-            <!-- TABVIEW: Приборы -->
-            <syncfusion:SfTabView>
+            <!-- Вкладки: Приборы -->
+            <HorizontalStackLayout Spacing="10">
+                <Button x:Name="BtnDevice1"
+                        Text="Прибор 1"
+                        Clicked="Device1_Clicked"
+                        BackgroundColor="#2E86DE"
+                        TextColor="White"
+                        CornerRadius="6"/>
+                <Button x:Name="BtnDevice2"
+                        Text="Прибор 2"
+                        Clicked="Device2_Clicked"
+                        BackgroundColor="LightGray"
+                        TextColor="Black"
+                        CornerRadius="6"/>
+                <Button x:Name="BtnDevice3"
+                        Text="Прибор 3"
+                        Clicked="Device3_Clicked"
+                        BackgroundColor="LightGray"
+                        TextColor="Black"
+                        CornerRadius="6"/>
+            </HorizontalStackLayout>
 
-                <syncfusion:SfTabItem Header="Прибор 1">
-                    <VerticalStackLayout Padding="10" Spacing="20">
-                        <HorizontalStackLayout>
-                        <Label Text="Наименование прибора" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Серийный номер" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Название изготовителя" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Точность измерений" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Свидетельство о проверке №" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Действителен до" VerticalOptions="Center"/>
-                        <DatePicker/>
-                        </HorizontalStackLayout>
-                    </VerticalStackLayout>
-                </syncfusion:SfTabItem>
+            <!-- Контент приборов -->
+            <ContentView x:Name="DeviceContent" />
 
-                <syncfusion:SfTabItem Header="Прибор 2">
-                    <VerticalStackLayout Padding="10" Spacing="20">
-                        <HorizontalStackLayout>
-                        <Label Text="Наименование прибора" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Серийный номер" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Название изготовителя" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Точность измерений" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Свидетельство о проверке №" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Действителен до" VerticalOptions="Center"/>
-                        <DatePicker/>
-                        </HorizontalStackLayout>
-                    </VerticalStackLayout>
-                </syncfusion:SfTabItem>
-
-                <syncfusion:SfTabItem Header="Прибор 3">
-                    <VerticalStackLayout Padding="10" Spacing="20">
-                        <HorizontalStackLayout>
-                        <Label Text="Наименование прибора" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Серийный номер" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Название изготовителя" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Точность измерений" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Свидетельство о проверке №" VerticalOptions="Center"/>
-                        <Entry WidthRequest="300"/>
-                        </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                        <Label Text="Действителен до" VerticalOptions="Center"/>
-                        <DatePicker/>
-                        </HorizontalStackLayout>
-                    </VerticalStackLayout>
-                </syncfusion:SfTabItem>
-
-            </syncfusion:SfTabView>
-
-
+            <!-- Комиссия -->
             <Label Text="Комиссия"
                    FontAttributes="Bold"
                    FontSize="18"
                    Margin="0,10,0,0"/>
 
-            <!-- Комиссия -->
-            <CollectionView HeightRequest="200" x:Name="CommissionList">
+            <Grid ColumnDefinitions="2*,2*,Auto,Auto" Padding="0,10,0,5">
+                <Label Text="Должность" FontAttributes="Bold" />
+                <Label Text="ФИО" Grid.Column="1" FontAttributes="Bold" />
+                <Label Text="Подпись" Grid.Column="2" FontAttributes="Bold" />
+                <Label Text="Печать" Grid.Column="3" FontAttributes="Bold" />
+            </Grid>
+
+            <CollectionView x:Name="CommissionList"
+                            SelectionMode="Single"
+                            HeightRequest="220">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="*,*,*,*">
-                            <Label Text="{Binding Position}"/>
-                            <Label Text="{Binding Name}" Grid.Column="1"/>
-                            <Button Text="подпись" Grid.Column="2"/>
-                            <Button Text="печать" Grid.Column="3"/>
+                        <Grid ColumnDefinitions="2*,2*,Auto,Auto" Padding="0,5">
+                            <Entry Text="{Binding Position}" />
+                            <Entry Text="{Binding Name}" Grid.Column="1"/>
+
+                            <Button Text="Выбрать"
+                                    Grid.Column="2"
+                                    Padding="5,0"
+                                    CommandParameter="{Binding}"
+                                    Clicked="OnSelectSignatureClicked"/>
+
+                            <Button Text="Выбрать"
+                                    Grid.Column="3"
+                                    Padding="5,0"
+                                    CommandParameter="{Binding}"
+                                    Clicked="OnSelectStampClicked"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="Добавить" WidthRequest="120"/>
-                <Button Text="Удалить" WidthRequest="120"/>
+            <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
+                <Button Text="Добавить строку"
+                        WidthRequest="150"
+                        Clicked="AddMember_Clicked"/>
+                <Button Text="Удалить строку"
+                        WidthRequest="150"
+                        Clicked="RemoveMember_Clicked"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
@@ -136,8 +90,8 @@
 
             <Button Text="Сохранить"
                     BackgroundColor="#2E86DE"
-                    TextColor="White"/>
-
+                    TextColor="White"
+                    Margin="0,10,0,0"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="MauiApp1.Views.Popups.FilePickerPopup"
+    >
+
+    <VerticalStackLayout Padding="20" Spacing="15"
+        WidthRequest="400"
+        HeightRequest="450">
+
+        <Label Text="Выберите изображение"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Button 
+           Text="Выбрать файл"
+           Clicked="PickFileClicked"
+           BackgroundColor="#2E86DE"
+           TextColor="White"
+           CornerRadius="5" />
+
+        <Image x:Name="PreviewImage"
+               HeightRequest="250"
+               Aspect="AspectFit"
+               IsVisible="False"/>
+
+        <Button 
+            Text="Ок"
+            Clicked="OkClicked"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            CornerRadius="5" />
+
+        <Button 
+            Text="Отмена"
+            Clicked="CancelClicked"
+            BackgroundColor="#B00020"
+            TextColor="White"
+            CornerRadius="5" />
+
+    </VerticalStackLayout>
+</toolkit:Popup>

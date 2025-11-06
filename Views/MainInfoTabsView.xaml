@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:Views="clr-namespace:MauiApp1"
-             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
-             x:Class="MauiApp1.MainInfoTabsView">
+<ContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MauiApp1.Views"
+    x:Class="MauiApp1.MainInfoTabsView">
 
-    <syncfusion:SfTabView>
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Button x:Name="BtnShipInfo" Text="Сведения о судне"
+                    Clicked="ShipInfo_Clicked"
+                    BackgroundColor="#2E86DE" TextColor="White" />
+            <Button x:Name="BtnZotInfo" Text="Сведения о ЗОТ"
+                    Clicked="ZotInfo_Clicked"
+                    BackgroundColor="LightGray" TextColor="Black" />
+            <Button x:Name="BtnOtherInfo" Text="Прочие сведения"
+                    Clicked="OtherInfo_Clicked"
+                    BackgroundColor="LightGray" TextColor="Black" />
+        </HorizontalStackLayout>
 
-        <syncfusion:SfTabItem Header="Сведения о судне">
-            <Views:MainInfoView />
-        </syncfusion:SfTabItem>
-
-        <syncfusion:SfTabItem Header="Сведения о ЗОТ">
-            <Views:ShipZOTView />
-        </syncfusion:SfTabItem>
-
-        <syncfusion:SfTabItem Header="Прочие сведения">
-            <Views:OtherInfoView/>
-        </syncfusion:SfTabItem>
-
-    </syncfusion:SfTabView>
+        <ContentView x:Name="TabContent"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"/>
+    </VerticalStackLayout>
 </ContentView>
