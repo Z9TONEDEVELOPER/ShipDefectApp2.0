@@ -4,22 +4,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:MauiApp1.Views"
     x:Class="MauiApp1.MainInfoTabsView">
-
-    <VerticalStackLayout Padding="10" Spacing="10">
-        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-            <Button x:Name="BtnShipInfo" Text="Сведения о судне"
-                    Clicked="ShipInfo_Clicked"
-                    BackgroundColor="#2E86DE" TextColor="White" />
-            <Button x:Name="BtnZotInfo" Text="Сведения о ЗОТ"
-                    Clicked="ZotInfo_Clicked"
-                    BackgroundColor="LightGray" TextColor="Black" />
-            <Button x:Name="BtnOtherInfo" Text="Прочие сведения"
-                    Clicked="OtherInfo_Clicked"
-                    BackgroundColor="LightGray" TextColor="Black" />
-        </HorizontalStackLayout>
-
-        <ContentView x:Name="TabContent"
-                     VerticalOptions="FillAndExpand"
-                     HorizontalOptions="FillAndExpand"/>
-    </VerticalStackLayout>
+        <ScrollView>
+                <VerticalStackLayout Padding="10" Spacing="10">
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                        <Button x:Name="BtnShipInfo" Text="Сведения о судне"
+                                Clicked="ShipInfo_Clicked"
+                                BackgroundColor="#2E86DE" TextColor="White" />
+                        <Button x:Name="BtnZotInfo" Text="Сведения о ЗОТ"
+                                Clicked="ZotInfo_Clicked"
+                                BackgroundColor="LightGray" TextColor="Black" />
+                        <Button x:Name="BtnOtherInfo" Text="Прочие сведения"
+                                Clicked="OtherInfo_Clicked"
+                                BackgroundColor="LightGray" TextColor="Black" />
+                        </HorizontalStackLayout>
+                        
+                        <ContentView x:Name="TabContent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"/>
+                </VerticalStackLayout>
+                </ScrollView>
 </ContentView>
