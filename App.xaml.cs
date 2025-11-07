@@ -3,7 +3,7 @@ namespace ShipDefectApp;
 
 public partial class App : Application
 {
-	bool DevMode = false;
+	bool DevMode = true;
 	public App()
 	{
 		InitializeComponent();
@@ -13,7 +13,7 @@ public partial class App : Application
 	{
 		//return new Window(new AppShell());
 		if (DevMode)
-			return new Window();
+			return new Window(new FormsView());
         else
         {
 			return new Window(new AppShell());

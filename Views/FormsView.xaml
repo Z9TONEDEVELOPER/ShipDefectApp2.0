@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.FormsView"
+             Title="FormsView">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Действия над таблицами"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Grid ColumnDefinitions="Auto,*"  RowDefinitions="*,*,*,*,*,*,*,*,*,*,*"  RowSpacing="10" ColumnSpacing="10">
+
+                <Label Text="Форма:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Picker x:Name="FormPicker" Grid.Row="0" Grid.Column="1" Title="Выберите форму">
+                        <Picker.Items>
+                                <x:String>None</x:String>
+                                <x:String>Форма 1.1</x:String>
+                                <x:String>Форма 1.2</x:String>
+                                <x:String>Форма 1.3</x:String>
+                                <x:String>Форма 2.1</x:String>
+                                <x:String>Форма 2.2</x:String>
+                                <x:String>Форма 2.3</x:String>
+                                <x:String>Форма 3</x:String>
+                                <x:String>Форма 4</x:String>
+                                <x:String>Форма 5</x:String>
+                                <x:String>Форма 6</x:String>
+                                <x:String>Форма 7</x:String>
+                                <x:String>Форма 8</x:String>
+                        </Picker.Items>
+                </Picker>
+
+                <Label Text="Расчётный участок:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Spacing="8">
+                <Picker x:Name="SectionPicker" Title="Выберите участок">
+                        <Picker.Items>
+                                <x:String>None</x:String>
+                        </Picker.Items>
+                </Picker>
+                <Entry x:Name="SectionEntry"
+                       Placeholder="Введите новый участок..."
+                       WidthRequest="220" />
+                </HorizontalStackLayout>
+
+                <Label Text="Конструкция:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Picker x:Name="ConstructionPicker" Grid.Row="2" Grid.Column="1" Title="Выберите конструкцию">
+                        <Picker.Items>
+                                <x:String>None</x:String>
+                                <x:String>Комингс грузовых люков участвующий в общем изгибе</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (оконечность)</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (переходной район)</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (средняя часть)</x:String>
+                                <x:String>Бортовая наружная обшивка</x:String>
+                                <x:String>Настил второго дна (оконечность)</x:String>
+                                <x:String>Настил второго дна (переходный район)</x:String>
+                                <x:String>Настил второго дна (средняя часть)</x:String>
+                                <x:String>Настил платформы (оконечность)</x:String>
+                                <x:String>Настил платформы (переходный район)</x:String>
+                                <x:String>Настил платформы (средняя часть)</x:String>
+                                <x:String>Обшивка продольных переборок</x:String>
+                                <x:String>Обшивка вторых бортов</x:String>
+                                <x:String>Обшивка продольных ферм</x:String>
+                                <x:String>Настил главной палубы (оконечность)</x:String>
+                                <x:String>Настил главной палубы (переходный район)</x:String>
+                                <x:String>Настил главной палубы (средняя часть)</x:String>
+                                <x:String>Настил верхней палубы (оконечность)</x:String>
+                                <x:String>Настил верхней палубы (переходный район)</x:String>
+                                <x:String>Настил верхней палубы (средняя часть)</x:String>
+                                <x:String>Настил палубы тронка (оконечность)</x:String>
+                                <x:String>Настил палубы тронка (переходный район)</x:String>
+                                <x:String>Настил палубы тронка (средняя часть)</x:String>
+                        </Picker.Items>
+                </Picker>
+
+            </Grid>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Добавить таблицу"
+                        BackgroundColor="#2E86DE"
+                        TextColor="White"
+                        Clicked="OnAddTableClicked"/>
+
+                <Button Text="Удалить таблицу"
+                        BackgroundColor="#B00020"
+                        TextColor="White"
+                        Clicked="OnRemoveTableClicked"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
