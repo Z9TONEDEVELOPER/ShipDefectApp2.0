@@ -13,7 +13,7 @@ public partial class App : Application
 	{
 		//return new Window(new AppShell());
 		if (DevMode)
-			return new Window(new FormsView());
+			return new Window(new FormPage());
         else
         {
 			return new Window(new AppShell());

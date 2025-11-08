@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.FormPage"
+             Title="FormPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Действия над таблицей"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <!-- Расчётный участок -->
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="Расчётный участок:" VerticalOptions="Center"/>
+                <Picker x:Name="SectionPicker"
+                        WidthRequest="200"
+                        Title="Выберите участок" />
+            </HorizontalStackLayout>
+
+            <!-- Конструкция -->
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="Конструкция:" VerticalOptions="Center"/>
+                <Picker x:Name="ConstructionPicker"
+                        WidthRequest="400"
+                        Title="Выберите конструкцию" >
+                        <Picker.Items>
+                                <x:String>None</x:String>
+                                <x:String>Комингс грузовых люков участвующий в общем изгибе</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (оконечность)</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (переходной район)</x:String>
+                                <x:String>Днищевая наружная обшивка, совместно со скуловым поясом (средняя часть)</x:String>
+                                <x:String>Бортовая наружная обшивка</x:String>
+                                <x:String>Настил второго дна (оконечность)</x:String>
+                                <x:String>Настил второго дна (переходный район)</x:String>
+                                <x:String>Настил второго дна (средняя часть)</x:String>
+                                <x:String>Настил платформы (оконечность)</x:String>
+                                <x:String>Настил платформы (переходный район)</x:String>
+                                <x:String>Настил платформы (средняя часть)</x:String>
+                                <x:String>Обшивка продольных переборок</x:String>
+                                <x:String>Обшивка вторых бортов</x:String>
+                                <x:String>Обшивка продольных ферм</x:String>
+                                <x:String>Настил главной палубы (оконечность)</x:String>
+                                <x:String>Настил главной палубы (переходный район)</x:String>
+                                <x:String>Настил главной палубы (средняя часть)</x:String>
+                                <x:String>Настил верхней палубы (оконечность)</x:String>
+                                <x:String>Настил верхней палубы (переходный район)</x:String>
+                                <x:String>Настил верхней палубы (средняя часть)</x:String>
+                                <x:String>Настил палубы тронка (оконечность)</x:String>
+                                <x:String>Настил палубы тронка (переходный район)</x:String>
+                                <x:String>Настил палубы тронка (средняя часть)</x:String>
+                        </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <!-- Кнопки действий -->
+            <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
+                <Button Text="Изображения"
+                        BackgroundColor="#3498db"
+                        TextColor="White"
+                        />
+                <Button Text="Добавить"
+                        BackgroundColor="#2ECC71"
+                        TextColor="White"
+                        />
+                <Button Text="Удалить"
+                        BackgroundColor="#E74C3C"
+                        TextColor="White"
+                        />
+            </HorizontalStackLayout>
+
+            <!-- Заглушка таблицы -->
+            <Frame BorderColor="#bdc3c7"
+                   BackgroundColor="#ecf0f1"
+                   Margin="0,10,0,0"
+                   Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="Таблица данных"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="Center"/>
+                    <Label Text="(Заглушка — таблица появится при выборе конструкции)"
+                           FontSize="13"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,5,0,0"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
