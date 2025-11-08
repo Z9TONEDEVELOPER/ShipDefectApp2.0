@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace MauiApp1;
 
-public partial class FormsView : ContentPage
+public partial class FormsView : ContentView  // Явно указываем наследование от ContentView
 {
     // Храним все участки
     private ObservableCollection<string> Sections = new();
@@ -33,7 +33,7 @@ public partial class FormsView : ContentPage
             string.IsNullOrEmpty(construction) || construction == "None" ||
             string.IsNullOrEmpty(section) || section == "None")
         {
-            DisplayAlert("Ошибка", "Заполните все поля перед добавлением таблицы.", "ОК");
+            //DisplayAlert("Ошибка", "Заполните все поля перед добавлением таблицы.", "ОК");
             return;
         }
 
@@ -47,12 +47,12 @@ public partial class FormsView : ContentPage
 
         string tableInfo = $"✅ Добавлена таблица:\nФорма: {form}\nУчасток: {section}\nКонструкция: {construction}";
         Console.WriteLine(tableInfo);
-        DisplayAlert("Успех", tableInfo, "ОК");
+        //DisplayAlert("Успех", tableInfo, "ОК");
     }
 
     // Кнопка "Удалить таблицу" (заглушка)
     private void OnRemoveTableClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Удаление", "Функция удаления таблиц будет добавлена позже.", "ОК");
+        //DisplayAlert("Удаление", "Функция удаления таблиц будет добавлена позже.", "ОК");
     }
 }

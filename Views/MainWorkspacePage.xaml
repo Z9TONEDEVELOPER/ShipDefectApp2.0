@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainWorkspacePage"
+             >
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Вкладки -->
+        <HorizontalStackLayout Grid.Row="0"
+                               Padding="10"
+                               Spacing="15"
+                               HorizontalOptions="Center">
+            <Button x:Name="BtnInput"
+                    Text="Ввод данных"
+                    BackgroundColor="#2E86DE"
+                    TextColor="White"
+                    Clicked="OnInputClicked"
+                    WidthRequest="160"/>
+
+            <Button x:Name="BtnReport"
+                    Text="Создание отчета"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="OnReportClicked"
+                    WidthRequest="160"/>
+        </HorizontalStackLayout>
+
+        <!-- Основная часть -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="250,*"
+              RowDefinitions="*"
+              Padding="5">
+
+            <!-- Дерево -->
+            <Frame BorderColor="#B0B0B0"
+                   BackgroundColor="#F5F6FA"
+                   Padding="5"
+                   Grid.Column="0"
+                   Margin="0,5,5,5">
+
+                <CollectionView x:Name="TreeViewList"
+                                SelectionMode="Single"
+                                SelectionChanged="OnTreeItemSelected">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Title}"
+                                       FontSize="15"
+                                       Padding="5,3"
+                                       FontAttributes="{Binding FontStyle}"
+                                       Margin="{Binding Margin}" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Frame>
+
+            <!-- Контент справа -->
+            <Frame BorderColor="#B0B0B0"
+                   BackgroundColor="White"
+                   Padding="10"
+                   Grid.Column="1"
+                   Margin="0,5,0,5">
+                <ContentView x:Name="ContentArea" />
+            </Frame>
+
+        </Grid>
+    </Grid>
+</ContentView>
