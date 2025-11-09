@@ -16,7 +16,7 @@
 
         <!-- 🔹 Верхняя панель -->
         <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2"
-                               BackgroundColor="#E5E5E5"
+                               BackgroundColor="#FF001D5A"
                                Padding="10"
                                Spacing="10"
                                VerticalOptions="Center">
@@ -54,7 +54,7 @@
         <ContentView x:Name="RightContent"
                      Grid.Row="1"
                      Grid.Column="1"
-                     BackgroundColor="#F8F8F8"/>
+                     BackgroundColor="#FF090367"/>
     </Grid>
 
 </ContentPage>

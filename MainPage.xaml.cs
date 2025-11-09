@@ -4,19 +4,21 @@ namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
-	{
-		InitializeComponent();
-		LoadView(new MainWorkspacePage());
-	}
-
-	public void LoadView(View view)
-	{
-		RightContent.Content = view;
-	}
-	private void OpenForms_Clicked(object sender, EventArgs e)
+    public MainPage()
     {
-        LoadView(new FormsView());
+        InitializeComponent();
+    }
+
+    // 👉 Обработка кнопки "Основная информация"
+    private void OpenMainInfo_Clicked(object sender, EventArgs e)
+    {
+        LoadContent(new MainInfoTabsView());
+    }
+
+    // 👉 Пример обработки кнопки "Формы"
+    private void OpenForms_Clicked(object sender, EventArgs e)
+    {
+        LoadContent(new FormsView());
     }
 
     // 👉 Пример подгрузки таблиц (пока просто заглушки)
@@ -25,7 +27,7 @@ public partial class MainPage : ContentPage
         if (sender is Button btn)
         {
             var tableName = btn.Text;
-            LoadView(new Label
+            LoadContent(new Label
             {
                 Text = $"{tableName}\n(заглушка таблицы)",
                 FontSize = 18,
@@ -35,8 +37,9 @@ public partial class MainPage : ContentPage
         }
     }
 
-	private void OpenMainInfo_Clicked(object sender, EventArgs e)
-	{
-		LoadView(new MainInfoTabsView());
-	}
+    // 👉 Метод загрузки контента в правую часть
+    private void LoadContent(View view)
+    {
+        RightContent.Content = view;
+    }
 }

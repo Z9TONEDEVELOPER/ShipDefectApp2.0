@@ -3,10 +3,12 @@ namespace ShipDefectApp;
 
 public partial class App : Application
 {
-	bool DevMode = true;
+	bool DevMode = false;
 	public App()
 	{
 		InitializeComponent();
+		
+
 	}
 
 	protected override Window CreateWindow(IActivationState? activationState)
