@@ -26,7 +26,7 @@
         <!-- Рабочая область -->
         <ContentView x:Name="MainContent"
                      Grid.Row="1"
-                     BackgroundColor="#F2F2F2"/>
+                     BackgroundColor="#FF413F3F"/>
     </Grid>
     
 

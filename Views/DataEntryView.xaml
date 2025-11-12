@@ -41,6 +41,6 @@
         <ContentView x:Name="RightContent"
                      Grid.Row="1"
                      Grid.Column="1"
-                     BackgroundColor="#ECECEC"/>
+                     BackgroundColor="#FF413F3F"/>
     </Grid>
 </ContentView>

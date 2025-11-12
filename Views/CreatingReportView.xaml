@@ -24,6 +24,6 @@
         <!-- Правая панель -->
         <ContentView x:Name="ReportContent"
                      Grid.Column="1"
-                     BackgroundColor="#ECECEC"/>
+                     BackgroundColor="#FF413F3F"/>
     </Grid>
 </ContentView>
