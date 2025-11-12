@@ -3,19 +3,9 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiApp1.MainPage">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <!-- 🔹 Верхняя панель -->
-        <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2"
+    <Grid RowDefinitions="Auto,*">
+        <!-- Верхняя панель -->
+        <HorizontalStackLayout Grid.Row="0"
                                BackgroundColor="#FF001D5A"
                                Padding="10"
                                Spacing="10"
@@ -23,38 +13,21 @@
             <Button Text="Создать" WidthRequest="120"/>
             <Button Text="Открыть" WidthRequest="120"/>
             <Button Text="Сохранить" WidthRequest="120"/>
+            <Button Text="Ввод данных"
+                    WidthRequest="140"
+                    HorizontalOptions="Center"
+                    Clicked="OpenDataEntry_Clicked"/>
+            <Button Text="Создание отчёта"
+                    WidthRequest="160"
+                    HorizontalOptions="Center"
+                    Clicked="OpenReport_Clicked"/>
         </HorizontalStackLayout>
 
-        <!-- 🔹 Левая панель -->
-        <ScrollView Grid.Row="1" Grid.Column="0">
-            <VerticalStackLayout Spacing="5" Padding="10">
-
-                <toolkit:Expander>
-                    <toolkit:Expander.Header>
-                        <Button Text="Основная информация" Clicked="OpenMainInfo_Clicked"/>
-                    </toolkit:Expander.Header>
-
-                    <VerticalStackLayout Padding="10" Spacing="5">
-                        <Button Text="Таблица 3.5.3" FontSize="13" HorizontalOptions="Start" Clicked="OpenTable_Clicked"/>
-                        <Button Text="Таблица 2.4.1" FontSize="13" HorizontalOptions="Start" Clicked="OpenTable_Clicked"/>
-                        <Button Text="Таблица 1.5.5" FontSize="13" HorizontalOptions="Start" Clicked="OpenTable_Clicked"/>
-                    </VerticalStackLayout>
-                </toolkit:Expander>
-
-                <toolkit:Expander>
-                    <toolkit:Expander.Header>
-                        <Button Text="Формы" Clicked="OpenForms_Clicked"/>
-                    </toolkit:Expander.Header>
-                </toolkit:Expander>
-
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <!-- 🔹 Правая область -->
-        <ContentView x:Name="RightContent"
+        <!-- Рабочая область -->
+        <ContentView x:Name="MainContent"
                      Grid.Row="1"
-                     Grid.Column="1"
-                     BackgroundColor="#FF090367"/>
+                     BackgroundColor="#F2F2F2"/>
     </Grid>
+    
 
 </ContentPage>

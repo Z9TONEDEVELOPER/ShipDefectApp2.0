@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CreatingReportView"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая панель -->
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout Padding="10" Spacing="8">
+                <Label Text="Формы отчёта" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Button Text="Титульный лист" Clicked="OpenTitle_Clicked"/>
+                <Button Text="Форма 1.1" Clicked="OpenForm_Clicked"/>
+                <Button Text="Форма 1.2" Clicked="OpenForm_Clicked"/>
+                <Button Text="Форма 2.1" Clicked="OpenForm_Clicked"/>
+                <Button Text="Форма 3" Clicked="OpenForm_Clicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Правая панель -->
+        <ContentView x:Name="ReportContent"
+                     Grid.Column="1"
+                     BackgroundColor="#ECECEC"/>
+    </Grid>
+</ContentView>
