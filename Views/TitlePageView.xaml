@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.TitlePageView">
+
+    <Grid ColumnDefinitions="180,*"
+          RowDefinitions="*"
+          BackgroundColor="#30d5c8">
+
+        <!-- Левая панель -->
+        <VerticalStackLayout Grid.Column="0"
+                             Spacing="12"
+                             Padding="15"
+                             BackgroundColor="#30d5c8"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Fill">
+            <Button Text="Титульный лист"
+                    BackgroundColor="#2E86DE"
+                    TextColor="White"
+                    HeightRequest="45"/>
+            <Button Text="Изображение"
+                    BackgroundColor="#404040"
+                    TextColor="White"
+                    HeightRequest="45"/>
+        </VerticalStackLayout>
+
+        <!-- Правая часть формы -->
+        <ScrollView Grid.Column="1"
+                    Padding="20"
+                    >
+
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Создать титульный лист -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Создать титульный лист:"
+                           FontSize="16"
+                           VerticalOptions="Center"/>
+                    <CheckBox x:Name="create_title_page"
+                              VerticalOptions="Center"
+                              Color="#2E86DE"/>
+                </HorizontalStackLayout>
+
+                <!-- Представитель судовладельца -->
+                <Frame BorderColor="#30d5c8" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Представитель судовладельца"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Entry Placeholder="Должность"/>
+                        <Entry Placeholder="Ф.И.О."/>
+                        <HorizontalStackLayout>
+                            <Label Text="Дата подписания:" VerticalOptions="Center"/>
+                            <DatePicker HorizontalOptions="Start"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Капитан / механик -->
+                <Frame BorderColor="#30d5c8" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Капитан / Старший механик"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Entry Placeholder="Должность"/>
+                        <Entry Placeholder="Ф.И.О."/>
+                        <HorizontalStackLayout>
+                            <Label Text="Дата подписания:" VerticalOptions="Center"/>
+                            <DatePicker/>
+                        </HorizontalStackLayout>
+                        <Entry Placeholder="Город издания акта дефектации"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Компания ЗОТ -->
+                <Frame BorderColor="#30d5c8" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Компания ЗОТ"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Entry Placeholder="Должность"/>
+                        <Entry Placeholder="Ф.И.О."/>
+                        <HorizontalStackLayout>
+                            <Label Text="Дата подписания:" VerticalOptions="Center"/>
+                            <DatePicker/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Эксперт -->
+                <Frame BorderColor="#30d5c8" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Добавить подпись эксперта"
+                                   FontSize="16"/>
+                            <CheckBox x:Name="add_signature_expert"
+                                      VerticalOptions="Center"
+                                      Color="#2E86DE"/>
+                        </HorizontalStackLayout>
+                        <Entry Placeholder="Должность"/>
+                        <Entry Placeholder="Ф.И.О."/>
+                        <HorizontalStackLayout>
+                            <Label Text="Дата подписания:" VerticalOptions="Center"/>
+                            <DatePicker/>
+                        </HorizontalStackLayout>
+                        <Entry Placeholder="Год издания (например, 2025)"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Сохранить"
+                        BackgroundColor="#2E86DE"
+                        HeightRequest="45"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        WidthRequest="200"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentView>
