@@ -13,9 +13,9 @@
         <ScrollView Grid.Column="0">
             <VerticalStackLayout Padding="10" Spacing="8">
                 <Button Text="Титульный лист" Clicked="OpenTitle_Clicked"/>
-                <Button Text="Свидетельство о признании РРР" Clicked="OpenForm_Clicked"/>
-                <Button Text="Свидетельство о проверке прибора" Clicked="OpenForm_Clicked"/>
-                <Button Text="Сертификат дефектоскописта" Clicked="OpenForm_Clicked"/>
+                <Button Text="Свидетельство о признании РРР" Clicked="RecognitionRRR_Clicked"/>
+                <Button Text="Свидетельство о проверке прибора" Clicked="RecognitionInspecDevice_Clicked"/>
+                <Button Text="Сертификат дефектоскописта" Clicked="CertificateFlawDec_Clicked"/>
                 <Button Text="Общий вид судна" Clicked="OpenForm_Clicked"/>
                 <Button Text="Протокол совещания" Clicked="OpenForm_Clicked"/>
                 <Button Text="Заключение" Clicked="OpenForm_Clicked"/>

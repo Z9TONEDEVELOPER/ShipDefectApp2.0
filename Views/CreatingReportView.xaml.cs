@@ -15,6 +15,18 @@ public partial class CreatingReportView : ContentView
     {
         LoadView(new TitlePageView());
     }
+    private void RecognitionRRR_Clicked(object sender, EventArgs e)
+    {
+        LoadView(new RecognitionRRRView());
+    }
+    private void RecognitionInspecDevice_Clicked(object sender, EventArgs e)
+    {
+        LoadView(new RecognitionInspecDeviceView());
+    }
+    private void CertificateFlawDec_Clicked(object sender, EventArgs e)
+    {
+        LoadView(new CertificateFlawDecView());
+    }
 
     private void OpenForm_Clicked(object sender, EventArgs e)
     {
