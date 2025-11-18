@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.NormsView"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Радио-кнопки -->
+            <VerticalStackLayout Spacing="10">
+                <RadioButton x:Name="RbRules"
+                            Content="Нормативы допустимых остаточных толщин согласно правилам РРР"
+                            GroupName="NormsGroup"/>
+
+                <RadioButton x:Name="RbIndividual"
+                             Content="Индивидуальные нормативы допустимых остаточных толщин связей корпуса"
+                             GroupName="NormsGroup"
+                             IsChecked="True"/>
+            </VerticalStackLayout>
+
+            <!-- Таблица -->
+            <Frame BorderColor="#555"
+                   BackgroundColor="White"
+                   HasShadow="False"
+                   Padding="0"
+                   HeightRequest="450">
+
+                <ScrollView Orientation="Vertical">
+
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+
+                        <!-- Колонки -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Заголовок -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32"/>
+                        </Grid.RowDefinitions>
+
+                        <Frame Grid.Column="0" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                            <Label Text="*" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </Frame>
+
+                        <Frame Grid.Column="1" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                            <Label Text="Конструкция корпуса" FontAttributes="Bold"/>
+                        </Frame>
+
+                        <Frame Grid.Column="2" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                            <Label Text="Район корпуса" FontAttributes="Bold"/>
+                        </Frame>
+
+                        <Frame Grid.Column="3" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                            <Label Text="Проектная толщина trp, мм" FontAttributes="Bold"/>
+                        </Frame>
+
+                        <Frame Grid.Column="4" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                            <Label Text="Допустимая толщина t, мм" FontAttributes="Bold"/>
+                        </Frame>
+
+                        <!-- Пустые строки -->
+                        <Grid x:Name="NormRows" Grid.Row="1" Grid.ColumnSpan="5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Номера -->
+                            <VerticalStackLayout Grid.Column="0" Spacing="0">
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="*" HeightRequest="32" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+
+                            <!-- Столбец 1 -->
+                            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                            </VerticalStackLayout>
+
+                            <!-- Столбец 2 -->
+                            <VerticalStackLayout Grid.Column="2" Spacing="0">
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                            </VerticalStackLayout>
+
+                            <!-- Столбец 3 -->
+                            <VerticalStackLayout Grid.Column="3" Spacing="0">
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                            </VerticalStackLayout>
+
+                            <!-- Столбец 4 -->
+                            <VerticalStackLayout Grid.Column="4" Spacing="0">
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                                <Entry HeightRequest="32"/>
+                            </VerticalStackLayout>
+
+                        </Grid>
+
+                    </Grid>
+
+                </ScrollView>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentView>

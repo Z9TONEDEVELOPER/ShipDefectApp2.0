@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.PlanView"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="25">
+
+            <!-- Заголовок -->
+            <Label Text="Планируемый объём измерений толщины"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,10"/>
+
+
+            <!-- ================= БЛОК №1 ================= -->
+            <VerticalStackLayout Spacing="5">
+
+                <Label Text="Конструкции для общего освидетельствования и замеров толщин"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,5"/>
+
+                <Frame BorderColor="#555"
+                       BackgroundColor="White"
+                       Padding="0"
+                       HasShadow="False"
+                       HeightRequest="250">
+
+                    <ScrollView Orientation="Vertical">
+                        <Grid ColumnDefinitions="50,*" RowSpacing="0">
+
+                            <!-- Заголовки -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+
+                            <Frame Grid.Column="0" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                                <Label Text="№ p/п" FontAttributes="Bold" FontSize="12"/>
+                            </Frame>
+
+                            <Frame Grid.Column="1" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                                <Label Text="Название" FontAttributes="Bold" FontSize="12"/>
+                            </Frame>
+
+                            <!-- Динамические строки (пока заглушка) -->
+                            <Grid x:Name="GeneralRows" Grid.ColumnSpan="2" Grid.Row="1" ColumnDefinitions="50,*">
+
+                                <!-- 12 строк -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- 🔹 Нумерация -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="1" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="2" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="2" Grid.Column="0" Text="3" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="3" Grid.Column="0" Text="4" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="4" Grid.Column="0" Text="5" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="5" Grid.Column="0" Text="6" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="6" Grid.Column="0" Text="7" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="7" Grid.Column="0" Text="8" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="8" Grid.Column="0" Text="9" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="9" Grid.Column="0" Text="10" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="10" Grid.Column="0" Text="11" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="11" Grid.Column="0" Text="12" VerticalTextAlignment="Center"/>
+
+                                <!-- 🔹 Поля ввода -->
+                                <Entry Grid.Row="0" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="1" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="2" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="3" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="4" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="5" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="6" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="7" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="8" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="9" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="10" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="11" Grid.Column="1" HeightRequest="28"/>
+
+                            </Grid>
+
+                        </Grid>
+                    </ScrollView>
+
+                </Frame>
+
+            </VerticalStackLayout>
+
+            <!-- ================= БЛОК №2 ================= -->
+            <VerticalStackLayout Spacing="5">
+
+                <Label Text="Конструкции для детального освидетельствования и замеров толщин"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,5"/>
+
+                <Frame BorderColor="#555"
+                       BackgroundColor="White"
+                       Padding="0"
+                       HasShadow="False"
+                       HeightRequest="250">
+
+                    <ScrollView Orientation="Vertical">
+                        <Grid ColumnDefinitions="50,*" RowSpacing="0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Заголовки -->
+                            <Frame Grid.Column="0" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                                <Label Text="№ p/п" FontAttributes="Bold" FontSize="12"/>
+                            </Frame>
+
+                            <Frame Grid.Column="1" BorderColor="#555" BackgroundColor="#FF413F3F" Padding="3">
+                                <Label Text="Название" FontAttributes="Bold" FontSize="12"/>
+                            </Frame>
+
+                            <!-- Заглушка строк -->
+                            <Grid x:Name="DetailRows" Grid.ColumnSpan="2" Grid.Row="1" ColumnDefinitions="50,*">
+
+                                <!-- 12 строк -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                    <RowDefinition Height="28"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- 🔹 Нумерация -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="1" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="2" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="2" Grid.Column="0" Text="3" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="3" Grid.Column="0" Text="4" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="4" Grid.Column="0" Text="5" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="5" Grid.Column="0" Text="6" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="6" Grid.Column="0" Text="7" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="7" Grid.Column="0" Text="8" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="8" Grid.Column="0" Text="9" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="9" Grid.Column="0" Text="10" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="10" Grid.Column="0" Text="11" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="11" Grid.Column="0" Text="12" VerticalTextAlignment="Center"/>
+
+                                <!-- 🔹 Поля ввода -->
+                                <Entry Grid.Row="0" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="1" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="2" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="3" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="4" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="5" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="6" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="7" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="8" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="9" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="10" Grid.Column="1" HeightRequest="28"/>
+                                <Entry Grid.Row="11" Grid.Column="1" HeightRequest="28"/>
+
+                            </Grid>
+
+                        </Grid>
+                    </ScrollView>
+
+                </Frame>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentView>

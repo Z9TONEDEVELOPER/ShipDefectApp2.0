@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MeetProtocolView"
-             Title="MeetProtocolView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             >
+    <Grid ColumnDefinitions="200,*">
+
+        <!-- ЛЕВАЯ ПАНЕЛЬ -->
+        <VerticalStackLayout Padding="10" Spacing="10" BackgroundColor="#FF403F3F">
+
+            <Button Text="Изображения"/>
+            <Button Text="Печать"/>
+            <Button Text="Сохранить"/>
+            <Button Text="Планируемый объём измерений толщины" Clicked="OpenPlan_Clicked"/>
+            <Button Text="Отметки о представлении материалов по судну" Clicked="OpenMaterials_Clicked"/>
+            <Button Text="Нормативы допустимых остаточных толщин" Clicked="OpenNorms_Clicked"/>
+
+        </VerticalStackLayout>
+
+        <!-- ПРАВАЯ ПАНЕЛЬ -->
+        <ContentView x:Name="RightContent"
+                     Grid.Column="1"
+                     BackgroundColor="#FF2C2C2C"/>
+    </Grid>
+</ContentView>

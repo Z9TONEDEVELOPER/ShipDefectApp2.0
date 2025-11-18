@@ -31,6 +31,10 @@ public partial class CreatingReportView : ContentView
     {
         LoadView(new VesselGeneralView());
     }
+    private void MeetProtocol_Clicked(object sender, EventArgs e)
+    {
+        LoadView(new MeetProtocolView());
+    }
     private void OpenForm_Clicked(object sender, EventArgs e)
     {
         if (sender is Button btn)

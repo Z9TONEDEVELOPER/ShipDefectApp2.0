@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MaterialsView"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <!-- Заголовок -->
+            <Label Text="Отметки о представлении материалов по судну"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,10"/>
+
+            <Grid ColumnDefinitions="*,50"
+                  RowSpacing="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <!-- 1 -->
+                <Label Grid.Row="0" Grid.Column="0" 
+                       Text="Акт о готовности судна к дефектации"/>
+                <CheckBox Grid.Row="0" Grid.Column="1"/>
+
+                <!-- 2 -->
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Text="Конструктивный чертеж корпуса судна"/>
+                <CheckBox Grid.Row="1" Grid.Column="1"/>
+
+                <!-- 3 -->
+                <Label Grid.Row="2" Grid.Column="0" 
+                       Text="Исполнительные документы по последнему ремонту корпуса судна"/>
+                <CheckBox Grid.Row="2" Grid.Column="1"/>
+
+                <!-- 4 -->
+                <Label Grid.Row="3" Grid.Column="0" 
+                       Text="Акт предыдущей дефектации"/>
+                <CheckBox Grid.Row="3" Grid.Column="1"/>
+
+                <!-- Подзаголовок -->
+                <Label Grid.Row="4" Grid.Column="0" 
+                       Text="Корректирование по результатам предыдущей дефектации и ремонта растяжки:"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,5"/>
+
+                <!-- 5 -->
+                <Label Grid.Row="5" Grid.Column="0" Text="- Наружной обшивки корпуса"/>
+                <CheckBox Grid.Row="5" Grid.Column="1"/>
+
+                <!-- 6 -->
+                <Label Grid.Row="6" Grid.Column="0" Text="- Второго борта"/>
+                <CheckBox Grid.Row="6" Grid.Column="1"/>
+
+                <!-- 7 -->
+                <Label Grid.Row="7" Grid.Column="0" Text="- Настила второго дна"/>
+                <CheckBox Grid.Row="7" Grid.Column="1"/>
+
+                <!-- 8 -->
+                <Label Grid.Row="8" Grid.Column="0" Text="- Настила палубы"/>
+                <CheckBox Grid.Row="8" Grid.Column="1"/>
+
+                <!-- 9 -->
+                <Label Grid.Row="9" Grid.Column="0" Text="- Схем поперечного сечения"/>
+                <CheckBox Grid.Row="9" Grid.Column="1"/>
+
+                <!-- 10 -->
+                <Label Grid.Row="10" Grid.Column="0" Text="- Эскизов раскроя поперечных и продольных переборок"/>
+                <CheckBox Grid.Row="10" Grid.Column="1"/>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentView>
