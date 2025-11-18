@@ -1,6 +1,6 @@
 namespace MauiApp1;
 
-public partial class VesselGeneralView : ContentPage
+public partial class VesselGeneralView : ContentView
 {
 	public VesselGeneralView()
 	{

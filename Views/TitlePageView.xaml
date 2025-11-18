@@ -5,13 +5,13 @@
 
     <Grid ColumnDefinitions="180,*"
           RowDefinitions="*"
-          BackgroundColor="#30d5c8">
+          BackgroundColor="#FF333232">
 
         <!-- Левая панель -->
         <VerticalStackLayout Grid.Column="0"
                              Spacing="12"
                              Padding="15"
-                             BackgroundColor="#30d5c8"
+                             BackgroundColor="#FF333232"
                              VerticalOptions="Start"
                              HorizontalOptions="Fill">
             <Button Text="Титульный лист"
@@ -42,7 +42,7 @@
                 </HorizontalStackLayout>
 
                 <!-- Представитель судовладельца -->
-                <Frame BorderColor="#30d5c8" Padding="15">
+                <Frame BorderColor="#FF333232" Padding="15">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Представитель судовладельца"
                                FontSize="16"
@@ -57,7 +57,7 @@
                 </Frame>
 
                 <!-- Капитан / механик -->
-                <Frame BorderColor="#30d5c8" Padding="15">
+                <Frame BorderColor="#FF333232" Padding="15">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Капитан / Старший механик"
                                FontSize="16"
@@ -73,7 +73,7 @@
                 </Frame>
 
                 <!-- Компания ЗОТ -->
-                <Frame BorderColor="#30d5c8" Padding="15">
+                <Frame BorderColor="#FF333232" Padding="15">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Компания ЗОТ"
                                FontSize="16"
@@ -88,7 +88,7 @@
                 </Frame>
 
                 <!-- Эксперт -->
-                <Frame BorderColor="#30d5c8" Padding="15">
+                <Frame BorderColor="#FF333232" Padding="15">
                     <VerticalStackLayout Spacing="10">
                         <HorizontalStackLayout Spacing="10">
                             <Label Text="Добавить подпись эксперта"

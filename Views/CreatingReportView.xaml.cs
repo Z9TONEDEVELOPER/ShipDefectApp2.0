@@ -27,7 +27,10 @@ public partial class CreatingReportView : ContentView
     {
         LoadView(new CertificateFlawDecView());
     }
-
+    private void VesselGeneral_Clicked(object sender, EventArgs e)
+    {
+        LoadView(new VesselGeneralView());
+    }
     private void OpenForm_Clicked(object sender, EventArgs e)
     {
         if (sender is Button btn)
