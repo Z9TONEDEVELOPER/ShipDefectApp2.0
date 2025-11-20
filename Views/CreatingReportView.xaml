@@ -18,7 +18,7 @@
                 <Button Text="Сертификат дефектоскописта" Clicked="CertificateFlawDec_Clicked"/>
                 <Button Text="Общий вид судна" Clicked="VesselGeneral_Clicked"/>
                 <Button Text="Протокол совещания" Clicked="MeetProtocol_Clicked"/>
-                <Button Text="Заключение" Clicked="OpenForm_Clicked"/>
+                <Button Text="Заключение" Clicked="Conclusion_Clicked"/>
                 <Button Text="Заключение эксперта РРР" Clicked="OpenForm_Clicked"/>
                 <Button Text="Ремонтные схемы" Clicked="OpenForm_Clicked"/>
                 <Button Text="Документы РРР" Clicked="OpenForm_Clicked"/>

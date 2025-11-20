@@ -1,6 +1,6 @@
 namespace MauiApp1;
 
-public partial class ConclusionView : ContentPage
+public partial class ConclusionView : ContentView
 {
 	public ConclusionView()
 	{

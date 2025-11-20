@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.ConclusionView"
-             Title="ConclusionView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             >
+    <Grid ColumnDefinitions="150,*" RowDefinitions="Auto,*" Padding="10">
+
+        <!-- Левая панель -->
+        <VerticalStackLayout Grid.Column="0" Spacing="10">
+            <Button Text="Изображения" />
+            <Button Text="Печать" />
+        </VerticalStackLayout>
+
+        <!-- Правая часть -->
+        <VerticalStackLayout Grid.Column="1" Spacing="10">
+
+            <!-- Верхняя панель -->
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Сохранить заключение"
+                        HorizontalOptions="Start"
+                        Padding="15,5"/>
+            </HorizontalStackLayout>
+
+            <!-- Белая область -->
+            <Frame BorderColor="#444"
+                   BackgroundColor="White"
+                   Padding="0"
+                   HasShadow="False"
+                   HeightRequest="600"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill">
+
+                <Grid>
+
+                    <!-- Основной Editor -->
+                    <Editor x:Name="ConclusionEditor"
+                            AutoSize="TextChanges"
+                            FontSize="14"
+                            Margin="8"
+                            Placeholder="Введите заключение..."
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill"/>
+                </Grid>
+
+            </Frame>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentView>
